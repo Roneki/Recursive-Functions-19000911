@@ -5,11 +5,11 @@ object problem5 extends App{
   }
   def isOdd(n:Int):Boolean= !(isEven(n))
 
-  def evenSum(n:Int, sum:Int=0):Int={
-    if(n==0)sum
-    else  if (isEven(n)) evenSum(n-1,sum+n)
-    else evenSum(n-1,sum)
-  }
-
+  def evenSum(n:Int,i:Int=0,sum:Int=0):Int={
+    if(i>=n){
+      return sum
+    }
+    return evenSum(n,i+2,sum+i)
+}
    println(evenSum(10))
 }
